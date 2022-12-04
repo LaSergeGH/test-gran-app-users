@@ -25,14 +25,12 @@ const usersReducer: Reducer<IStore, TActions> = (
 ) => {
   switch (action.type) {
     case EActionsTypes.ACTION_SET_USERS:
-      // return [...action.users];
       return {
         ...state,
         users: [...action.users],
       };
     case EActionsTypes.ACTION_DELETE_USER:
       const { id } = action;
-      // return [...state.filter(({ id: userId }) => userId !== id)];
       return {
         ...state,
         users: [...state.users.filter(({ id: userId }) => userId !== id)],
