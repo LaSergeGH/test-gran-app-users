@@ -18,10 +18,8 @@ interface IUserTableProps {
 const UsersTable = ({ userId, setUserId, setShowForm }: IUserTableProps) => {
   const { actionGetUsers, actionDeleteUser } = useActions();
   // loading users
-  useInitialEffect(actionGetUsers as unknown as EffectCallback, [
-    // actionGetUsers,
-  ]);
-  const { users } = useTypedSelector((state) => state);
+  useInitialEffect(actionGetUsers as unknown as EffectCallback, []);
+  const { users } = useTypedSelector((state) => state.users);
 
   const [showPrompt, setShowPrompt] = useState(false);
 

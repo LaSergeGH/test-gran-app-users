@@ -38,11 +38,10 @@ const initialValues = {
 };
 
 const UsersForm = ({ onSubmitCallback, userId }: IUsersFormProps) => {
-  const { users } = useTypedSelector((state) => state);
+  const { users } = useTypedSelector((state) => state.users);
   const { actionAddUser, actionEditUser } = useActions();
 
   const handleSubmit = (values: IUsersFormValues) => {
-    // console.log(values);
     if (userId) {
       actionEditUser(values);
     } else {
